@@ -35,7 +35,16 @@ function generateCartDescription() {
 }
 
 function total() {
-  // write your code here
+  var allThePrices=[];
+     for (var i = 0; i < (cart.length); i++){
+       var item = Object.keys(cart[i]);
+       var price =cart[i][item];
+       allThePrices.push(price);
+      }
+      sum = allThePrices.reduce((a, b) => a+b, 0);
+      return sum;
+    
+    }
 }
 
 function removeFromCart(item) {
