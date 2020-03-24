@@ -43,9 +43,7 @@ function total() {
       }
       sum = allThePrices.reduce((a, b) => a+b, 0);
       return sum;
-    
     }
-}
 
 function removeFromCart(item) {
   // write your code here
