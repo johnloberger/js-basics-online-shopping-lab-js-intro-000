@@ -46,6 +46,13 @@ function removeFromCart(item) {
   var itemToRemove = searchCartForItemToRemove(itemName)
     return itemToRemove ? removeItemFromCart(itemToRemove) : notifyUserThereIsNoItemToRemove()
   }
+  function searchCartForItemToRemove(itemName) {
+  var searchResult
+  for (var i=0; i<getCart().length; i++) {
+    if (getCart()[i].itemName === itemName) {searchResult = getCart()[i]}
+  }
+  return searchResult
+}
   function notifyUserThereIsNoItemToRemove() {
   return 'That item is not in your cart.'
 }
