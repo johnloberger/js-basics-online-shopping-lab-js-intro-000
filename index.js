@@ -17,18 +17,24 @@ function addToCart(item) {
   }
 
 function viewCart() {
-  var stringArray = ["In your cart, you have"]
-  if (cart.length >= 1){
-  for (let i=0; cart.length >= i ; i++){
-  var object1 = cart[i]
-  stringArray.push(`${object1} at ${object1}`)
-  }
-  stringArray.push(`.`)
-  return stringArray
-  } else {
-    return "Your shopping cart is empty."
+  if (cart.length === 0) {
+     console.log(`Your shopping cart is empty.`);
+   } else {
+     var statment = "In your cart, you have ";
+       for (var i = 0; i < cart.length; i++) {
+           var currentItem = cart[i];
+           
+           for (var itemName in currentItem) {
+             statment += `In your cart, you have ${itemName} at ${currentItem[itemName]},`;
+             
+             if (i === cart.length -1) {
+               statment += `and ${itemName} at ${currentItem[itemName]}.`;
+             }
+           }
+       }
+     console.log(statement);
    }
-  }
+ }
 
 function total() {
   // write your code here
