@@ -17,18 +17,22 @@ function addToCart(item) {
   }
 
 function viewCart() {
-  if (cart.length === 0) {
-    console.log("Your shopping cart is empty.")
+  if (cart.length === 0){
+    console.log('Your shopping cart is empty.')
+  } else if (cart.length === 1){
+    var oneItem = `In your cart, you have ${Object.keys(cart[0])} at $${Object.values(cart[0])}.`
+    console.log(oneItem)
+  } else if (cart.length === 2){
+    var twoItems = `In your cart, you have ${Object.keys(cart[0])} at $${Object.values(cart[0])} and ${Object.keys(cart[1])} at $${Object.values(cart[1])}.`
+    console.log(twoItems)
   } else {
-    var newArr = [];
-    for (var i = 0; i < cart.length; i++) {
-      var price = Object.keys(cart[i]);
-      for (var price in cart[i]) {
-        newArr.push(`${Object.keys(cart[i])} at $${cart[i][price]}`)
-      }
-    }
-    return console.log("In your cart, you have " + newArr.join(", ") + ".");
+    var cartData = []
+    for (var i = 0; i < cart.length-1; i++){
+      cartData.push(`${Object.keys(cart[i])} at $${Object.values(cart[i])}`)
+}
+    var threePlusItems = `In your cart, you have ${cartData.join(', ')}, and ${Object.keys(cart[cart.length-1])} at $${Object.values(cart[cart.length-1])}.`
   }
+  console.log(threePlusItems)
 }
 
 function total() {
