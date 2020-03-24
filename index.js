@@ -42,17 +42,16 @@ function total() {
   return sum
 }
 
-function removeFromCart(item) {
-  cart.forEach(function(elem, index) {
-    if (elem.hasOwnProperty(item)) {
-      cart.splice(index, 1);
+function removeFromCart(item) {  
+    for (var i = 0; i < cart.length; i++) {
+          var itemsInCart = Object.keys(cart[i]);
+          if (cart[i].hasOwnProperty(itemToRemove)) {
+             cart.splice(cart[i], 1);
+             return cart;
+          }
     }
-  })
-  return cart
-} else if {
-      return "That item is not in your cart."
-    }
-
+    console.log('That item is not in your cart.')
+}
 
 function placeOrder(cardNumber) {
   // write your code here
