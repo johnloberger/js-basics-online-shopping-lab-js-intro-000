@@ -17,7 +17,12 @@ function addToCart(item) {
   }
 
 function viewCart() {
-  // write your code here
+  var stringArray = ["In your cart, you have"]
+  if (cart.length >= 1){
+  for (let i=0; cart.length >= i ; i++){
+  var object1 = cart[i]
+  stringArray.push(`${objecto} at ${object1}`)
+  }
 }
 
 function total() {
