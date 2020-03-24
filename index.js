@@ -22,6 +22,9 @@ function viewCart() {
   for (let i=0; cart.length >= i ; i++){
   var object1 = cart[i]
   stringArray.push(`${objecto} at ${object1}`)
+  else {
+    return "Your shopping cart is empty."
+   }
   }
  }
 }
