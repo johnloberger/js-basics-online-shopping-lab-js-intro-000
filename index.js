@@ -49,7 +49,7 @@ function removeFromCart(item) {
     }
   })
   return cart
-  else {
+} else if {
       return "That item is not in your cart."
     }
 
