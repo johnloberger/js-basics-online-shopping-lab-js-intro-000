@@ -23,6 +23,7 @@ function viewCart() {
   var object1 = cart[i]
   stringArray.push(`${objecto} at ${object1}`)
   }
+ }
 }
 
 function total() {
