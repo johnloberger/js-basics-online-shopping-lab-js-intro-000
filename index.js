@@ -17,17 +17,20 @@ function addToCart(item) {
   }
 
 function viewCart() {
-  if (cart.length===0) {
+  if (cart.length === 0) {
     console.log("Your shopping cart is empty.")
-  } else{
-    var itemReport = "In your cart, you have"
-    for (var i=0;i<cart.length;i++){
-      var itemName = Object.keys(cart[i])
-      itemReport = itemReport+` ${itemName} at $${cart[i][itemName]}${i===cart.length-1 ? "." : ","}`
-    }
-    console.log(itemReport)
-    }
+  }  else {
+    const itemsAndPrices = [];
+    const l = cart.length
+      for (let i = 0; i < l; i++) {
+        let itemAndPrice = cart[i]
+        let item = Object.keys(itemAndPrice)[0]
+        let price = itemAndPrice[item]
+    itemsAndPrices.push(`${item} at \$${price}`)
   }
+  console.log(`In your cart, you have ${itemsAndPrices.join(', ')}.`)
+ }
+}
 
 function total() {
   // write your code here
