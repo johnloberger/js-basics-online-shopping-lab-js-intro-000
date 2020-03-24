@@ -17,24 +17,19 @@ function addToCart(item) {
   }
 
 function viewCart() {
-  if(cart.length === 0){
-		console.log("Your shopping cart is empty.")
-	} else if(cart.length === 1){
-		console.log("In your cart, you have " + Object.keys(cart[0])[0] + " at $" + Object.values(cart[0])[0] + ".")
-	} else if(cart.length > 1){
-		  var tempArr = [];
-	    for(var i = 0; i < cart.length - 1; i++){
-	      var itemName = Object.keys(cart[i])[0];
-	      var itemPrice = Object.values(cart[i])[0];
-	      tempArr.push(`${itemName} at $${itemPrice}`)
-    	}
+  if (cart.length === 0) {
+    return `Your shopping cart is empty`
+  } else {
+    cartItems = []
 
-      if(cart.length === 2){
-    	var lastItemAndPrice = " and " + Object.keys(cart[cart.length-1])[0] + " at $" + Object.values(cart[cart.length-1])[0] + "."
-    } else {
-        lastItemAndPrice = ", and " + Object.keys(cart[cart.length-1])[0] + " at $" + Object.values(cart[cart.length-1])[0] + "."
+    var last = `${cart[cart.length - 1].itemName} at $${cart[cart.length - 1].itemPrice}.`
+
+    for(var i = 0; i < cart.length - 1; i++){
+       cartItems.push(
+         `${cart[i].itemName} at $${cart[i].itemPrice}`
+       )
     }
-    	console.log("In your cart, you have " + tempArr.join(", ") + `${lastItemAndPrice}`)
+    return `In your cart, you have ${cartItems.join(', ')}, and ${last}`
   }
 }
 
