@@ -21,7 +21,7 @@ function viewCart() {
   if (cart.length >= 1){
   for (let i=0; cart.length >= i ; i++){
   var object1 = cart[i]
-  stringArray.push(`${objecto} at ${object1}`)
+  stringArray.push(`${object1} at ${object1}`)
   }
  }
  else {
