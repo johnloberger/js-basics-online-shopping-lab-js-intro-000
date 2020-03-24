@@ -23,11 +23,12 @@ function viewCart() {
   var object1 = cart[i]
   stringArray.push(`${object1} at ${object1}`)
   }
- }
- else {
-   return "Your shopping cart is empty."
+  stringArray.push(`.`)
+  return stringArray
+  } else {
+    return "Your shopping cart is empty."
+   }
   }
-}
 
 function total() {
   // write your code here
