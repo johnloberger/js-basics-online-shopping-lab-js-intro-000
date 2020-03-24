@@ -17,19 +17,7 @@ function addToCart(item) {
   }
 
 function viewCart() {
-  if(cart.length === 0){
-      console.log("Your shopping cart is empty.");
-  } else {
-      var cartStr = "In your cart, you have ";
-      for(var value in cart){
-          if(value === cart[-1]){
-            return cartStr += " "+ "and" + value + " " + "at" + cart[value]+".";
-          } else{
-            cartStr += + " " + value + " " + "at" + cart[value];
-      }
-      }
-  }
-  console.log(cartStr);
+  return getCart().length === 0 ? "Your shopping cart is empty." : generateCartDescription()
 }
 
 function total() {
