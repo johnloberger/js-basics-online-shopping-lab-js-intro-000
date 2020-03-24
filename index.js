@@ -49,9 +49,9 @@ function removeFromCart(item) {
         return cart;
       }
     }
-    // not found:
     return "That item is not in your cart.";
   }
+  console.log(removeFromCart(item))
 
 function placeOrder(cardNumber) {
   // write your code here
