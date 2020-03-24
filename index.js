@@ -17,18 +17,17 @@ function addToCart(item) {
   }
 
 function viewCart() {
-  if (cart.length === 0) {
+  if (cart.length===0) {
     console.log("Your shopping cart is empty.")
-  } else {
-    var items = [];
-    for (var i = 0; i < cart.length; i++) {
-      for (var item in cart[i]) {
-        items.push(item + " at $" + cart[i][item])
-      }
+  } else{
+    var itemReport = "In your cart, you have"
+    for (var i=0;i<cart.length;i++){
+      var itemName = Object.keys(cart[i])
+      itemReport = itemReport+` ${itemName} at $${cart[i][itemName]}${i===cart.length-1 ? "." : ","}`
     }
-    console.log("In your cart, you have " + items.join(", ") + ".");
+    console.log(itemReport)
+    }
   }
-}
 
 function total() {
   // write your code here
